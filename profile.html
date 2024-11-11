@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Expenzo Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">PBT</div>
+            <nav class="menu">
+                <a href="index.html" class="menu-item">Dashboard</a>
+                <a href="expenses.html" class="menu-item">Expenses</a>
+                <a href="profile.html" class="menu-item active">Profile</a>
+                <a href="#logout" class="menu-item">Log out</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h1>Welcome, User</h1>
+                <div class="header-actions">
+                    <div class="icon-group">
+                        <img id="avatar-icon" class="avatar-icon" src="images/user.png" alt="Avatar Icon" />
+                        <img id="theme-toggle" class="icon-button toggle-theme" src="images/dark.png" alt="Theme Toggle" />
+                    </div>
+                </div>
+            </header>
+
+            <!-- Personal Information -->
+            <section class="personal-info">
+                <h2>Personal Information</h2>
+                <div class="info-container">
+                    <p><strong>Name:</strong> User Name</p>
+                    <p><strong>Email:</strong> user@example.com</p>
+                </div>
+            </section>
+
+            <!-- Upcoming Bills and Payments -->
+            <section class="bills-section">
+                <h2>Upcoming Bills and Payment</h2>
+                <button id="add-bill-btn" class="add-new">+ Add New Bill</button>
+                <table class="bills-table">
+                    <thead>
+                        <tr>
+                            <th>Bill Name</th>
+                            <th>Frequency</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bills-body">
+                        <!-- Dynamic content will be added here -->
+                    </tbody>
+                </table>
+            </section>            
+        </main>
+    </div>
+
+    <!-- Modal for adding a new bill -->
+    <div id="bill-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2>Add New Bill</h2>
+            <form id="bill-form">
+                <label>Bill Name:</label>
+                <input type="text" id="bill-name" required>
+
+                <label>Frequency:</label>
+                <select id="bill-frequency" required>
+                    <option value="Monthly">Monthly</option>
+                    <option value="Weekly">Weekly</option>
+                    <option value="Yearly">Yearly</option>
+                </select>
+
+                <label>Amount:</label>
+                <input type="number" id="bill-amount" min="0" required>
+
+                <button type="submit" class="submit-btn">Add Bill</button>
+            </form>
+        </div>
+    </div>
+    <script src="profile.js"></script>
+</body>
+</html>

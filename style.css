@@ -1,0 +1,445 @@
+:root {
+  --primary-color: #264653; /* Sidebar background color */
+  --secondary-color: #FFF8E7; /* Category card background */
+  --dark-background: #1D1E2C; /* Dark mode background */
+  --light-background: #F7F9FC; /* Light mode background */
+  --text-color-dark: #2A2A2A; /* Text color for light mode */
+  --text-color-light: #EDEDED; /* Text color for dark mode */
+  --income-card-color: #2A9D8F; /* Income card color */
+  --expense-card-color: #E76F51; /* Expense card color */
+  --balance-card-color: #E9C46A; /* Balance card color */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s ease;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--light-background);
+  color: var(--text-color-dark);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.dashboard-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--secondary-color);
+  overflow: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  background-color: var(--primary-color);
+  width: 20%;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  padding: 10px 0;
+  font-size: 18px;
+  color: #E9C46A;
+  text-decoration: none;
+  transition: padding-left 0.3s ease;
+}
+
+.menu-item:hover {
+  padding-left: 10px;
+}
+
+.menu-item.active {
+  color: white;
+  font-weight: 700;
+}
+
+/* Main Content Styling */
+.main-content {
+  background-color: var(--light-background);
+  flex-grow: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  padding: 8px;
+  width: 200px;
+  border-radius: 8px;
+  border: 1px solid #D9D9D9;
+  margin-right: 10px;
+  transition: width 0.3s ease;
+}
+
+.search-bar:focus {
+  width: 250px;
+}
+
+.icon-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-button {
+  border: none;
+  background: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.avatar-icon {
+  font-size: 24px;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #E6D8F7;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.avatar-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Card Styling with Hover Animation */
+.summary-cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.income-card { background-color: var(--income-card-color); }
+.expense-card { background-color: var(--expense-card-color); }
+.balance-card { background-color: var(--balance-card-color); }
+
+.card span {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Category Card Styling */
+.expense-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.category-card {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  border: 1px solid #EAEAEA;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-new {
+  background-color: #D9D9D9;
+  color: var(--primary-color);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none; /* Remove default border for button */
+}
+
+.add-new:hover {
+  background-color: #c0c0c0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Transaction Section Styling */
+.transaction-section {
+  display: flex;
+  gap: 20px;
+  min-height: 300px;
+}
+
+.transaction-chart, .recent-transactions {
+  flex: 1;
+  padding: 20px;
+  background-color: var(--light-background);
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add a class to show the modal */
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background-color: var(--secondary-color);
+  padding: 20px;
+  width: 300px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease forwards;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content h2 {
+  font-size: 20px;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.modal-content input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  flex: 1;
+  text-align: center;
+}
+
+
+.modal-button:hover {
+  background-color: #1F8B4C;
+}
+
+.delete-button {
+  background-color: #E76F51; /* Different color for delete button */
+}
+
+.delete-button:hover {
+  background-color: #C94D3F; 
+}
+
+.modal-content .modal-buttons {
+  margin-top: 15px;
+}
+
+.close {
+  color: #333;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #555;
+}
+
+
+
+
+/* Transaction Modal Styling */
+#transactionModal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+#transactionModal.show {
+  display: flex;
+}
+
+#transactionModal .modal-content {
+  background-color: var(--secondary-color);
+  padding: 20px;
+  width: 300px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease forwards;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: var(--dark-background);
+  color: var(--text-color-light);
+}
+
+.sidebar.dark-mode {
+  background-color: #10121B;
+}
+
+.main-content.dark-mode {
+  background-color: var(--dark-background);
+}
+
+.header.dark-mode h1,
+.header.dark-mode .search-bar {
+  color: var(--text-color-light);
+}
+
+.search-bar.dark-mode {
+  background-color: #333;
+  border: 1px solid #555;
+  color: var(--text-color-light);
+}
+
+.card.dark-mode {
+  background-color: #333; /* General dark card background */
+  color: var(--text-color-light);
+  border: none;
+}
+
+.income-card.dark-mode { background-color: #1F8B4C; }
+.expense-card.dark-mode { background-color: #DDAA00; }
+.balance-card.dark-mode { background-color: #834FCE; }
+
+.expense-categories.dark-mode .category-card {
+  background-color: #2B2B2B;
+  color: var(--text-color-light);
+  border: none;
+}
+
+.add-new.dark-mode {
+  background-color: #444;
+  color: var(--text-color-light);
+}
+
+.transaction-chart.dark-mode, .recent-transactions.dark-mode {
+  background-color: #2D2D2D;
+  color: var(--text-color-light);
+  border: none;
+}
+
+.icon-button.dark-mode {
+  color: var(--text-color-light);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+  .menu-item {
+    font-size: 12px;
+  }
+}

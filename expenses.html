@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses - Expenzo Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="expenses.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">PBT</div>
+            <nav class="menu">
+                <a href="index.html" class="menu-item">Dashboard</a>
+                <a href="expenses.html" class="menu-item active">Expenses</a>
+                <a href="profile.html" class="menu-item">Profile</a>
+                <a href="#logout" class="menu-item">Log out</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h1>Welcome, User</h1>
+                <div class="header-actions">
+                    <div class="icon-group">
+                        <img id="avatar-icon" class="avatar-icon" src="images/user.png" alt="Avatar Icon" />
+                        <img id="theme-toggle" class="icon-button toggle-theme" src="images/dark.png" alt="Theme Toggle" />
+                    </div>
+                </div>
+            </header>
+
+            <section class="expenses-section">
+                <button id="add-expense-btn" class="add-new">+ Add New</button>
+                <table class="expenses-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Platform</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expenses-body">
+                        <!-- Dynamic content will be added here -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for adding a new expense -->
+    <div id="expense-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2>Add New Expense</h2>
+            <form id="expense-form">
+                <label for="expense-date">Date:</label>
+                <input type="date" id="expense-date" required>
+                
+                <label for="expense-category">Category:</label>
+                <input type="text" id="expense-category" required>
+
+                <label for="expense-amount">Amount:</label>
+                <input type="number" id="expense-amount" min="0" required>
+
+                <label for="expense-status">Status:</label>
+                <select id="expense-status" required>
+                    <option value="Completed">Completed</option>
+                    <option value="Pending">Pending</option>
+                </select>
+
+                <label for="expense-platform">Platform:</label>
+                <input type="text" id="expense-platform" required>
+
+                <label for="expense-type">Type:</label>
+                <input type="text" id="expense-type" required>
+
+                <button type="submit" class="submit-btn">Add Expense</button>
+            </form>
+        </div>
+    </div>
+    <script src="expenses.js"></script>
+</body>
+</html>
