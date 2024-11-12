@@ -133,3 +133,109 @@
 .dark-mode .submit-btn:hover {
     background-color: #666;
 }
+
+
+/* Responsive styling for expenses page */
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+    /* Adjust padding for expenses section */
+    .expenses-section {
+        padding: 15px;
+    }
+
+    /* Adjust button size */
+    .add-new {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    /* Adjust table cell padding */
+    .expenses-table th, .expenses-table td {
+        padding: 10px;
+    }
+
+    /* Adjust table header font size */
+    .expenses-table th {
+        font-size: 14px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    /* Stack sidebar and main content */
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .menu-item {
+        font-size: 14px;
+    }
+
+    /* Adjust main content padding */
+    .main-content {
+        padding: 15px;
+    }
+
+    /* Make table scrollable on mobile */
+    .expenses-section {
+        overflow-x: auto;
+    }
+
+    /* Smaller padding and font size for table on mobile */
+    .expenses-table th, .expenses-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    /* Adjust the modal to fit mobile screen */
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    /* Adjust button size */
+    .add-new, .submit-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 576px) {
+    .menu-item {
+        font-size: 12px;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    /* Reduce padding in expenses section */
+    .expenses-section {
+        padding: 5px;
+    }
+
+    /* Smaller padding and font size for table cells */
+    .expenses-table th, .expenses-table td {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    /* Adjust modal width and button size */
+    .modal-content {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .add-new, .submit-btn {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}

@@ -443,3 +443,122 @@ body.dark-mode {
     font-size: 12px;
   }
 }
+
+
+/* Existing styles above... */
+
+/* Responsive styling for smaller screens */
+@media (max-width: 1024px) {
+  /* Adjust sidebar and main layout for tablets */
+  .dashboard-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .menu-item {
+    padding: 5px 0;
+    font-size: 16px;
+  }
+
+  /* Adjust main content padding */
+  .main-content {
+    padding: 20px;
+  }
+
+  /* Resize summary cards and expense categories */
+  .summary-cards {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .expense-categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Adjust sidebar for mobile */
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .menu-item {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  /* Adjust main content padding */
+  .main-content {
+    padding: 15px;
+  }
+
+  /* Responsive summary cards */
+  .summary-cards {
+    flex-direction: column;
+  }
+
+  .card {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  /* Responsive expense categories layout */
+  .expense-categories {
+    grid-template-columns: 1fr;
+  }
+
+  /* Responsive transaction and chart sections */
+  .transaction-section {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Further reduce padding and font sizes for small screens */
+  .sidebar {
+    padding: 5px;
+  }
+
+  .menu-item {
+    font-size: 12px;
+  }
+
+  /* Main content adjustments */
+  .main-content {
+    padding: 10px;
+  }
+
+  /* Adjust header font size */
+  .header h1 {
+    font-size: 20px;
+  }
+
+  /* Adjust card font and padding for small screens */
+  .card {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  /* Full-width category cards */
+  .expense-categories {
+    grid-template-columns: 1fr;
+  }
+  
+  .category-card {
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  /* Adjust modal dimensions for smaller screens */
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+}

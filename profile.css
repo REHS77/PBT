@@ -133,3 +133,118 @@
     background-color: #555;
     color: #EDEDED;
 }
+
+/* Responsive styling for personal info and bills sections */
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+    /* Adjust padding for the main sections */
+    .personal-info, .bills-section {
+      padding: 15px;
+    }
+    
+    .info-container p {
+      font-size: 16px;
+    }
+  
+    /* Adjust table structure for smaller screens */
+    .bills-table th, .bills-table td {
+      padding: 10px;
+    }
+  
+    .bills-table th {
+      font-size: 14px;
+    }
+  
+    .add-new {
+      font-size: 16px;
+      padding: 8px 15px;
+    }
+  }
+  
+  /* Mobile screens */
+  @media (max-width: 768px) {
+    /* Stack sidebar and main content */
+    .dashboard-container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .menu-item {
+      font-size: 14px;
+    }
+  
+    /* Adjust personal info and bills section */
+    .personal-info, .bills-section {
+      padding: 10px;
+    }
+  
+    .info-container p {
+      font-size: 14px;
+    }
+  
+    /* Responsive table adjustments */
+    .bills-table {
+      font-size: 14px;
+    }
+  
+    /* Make the modal full-width */
+    .modal-content {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    /* Adjust buttons */
+    .add-new, .submit-btn {
+      font-size: 14px;
+      padding: 8px 15px;
+    }
+  }
+  
+  /* Small mobile screens */
+  @media (max-width: 576px) {
+    /* Further adjust font and padding for smaller screens */
+    .menu-item {
+      font-size: 12px;
+    }
+  
+    .main-content {
+      padding: 10px;
+    }
+  
+    /* Personal info and table styling */
+    .personal-info, .bills-section {
+      padding: 5px;
+    }
+  
+    .info-container p {
+      font-size: 12px;
+    }
+  
+    /* Reduce table padding and font size */
+    .bills-table th, .bills-table td {
+      padding: 8px;
+    }
+  
+    /* Adjust font size for table headers */
+    .bills-table th {
+      font-size: 12px;
+    }
+  
+    /* Modal adjustments */
+    .modal-content {
+      width: 90%;
+      padding: 10px;
+    }
+  
+    .submit-btn, .add-new {
+      font-size: 12px;
+      padding: 5px 10px;
+    }
+  }
+  
