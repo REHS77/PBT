@@ -1,14 +1,14 @@
 :root {
-  --primary-color: #264653; /* Sidebar background color */
-  --secondary-color: #F1F5F9; /* Updated lighter background for modern look */
-  --dark-background: #1D1E2C; /* Dark mode background */
-  --light-background: #FFFFFF; /* Light mode background */
-  --text-color-dark: #333333; /* Slightly darker text color for readability */
-  --text-color-light: #EDEDED; /* Text color for dark mode */
-  --income-card-color: #4CAF50; /* Refreshed income card color */
-  --expense-card-color: #FF6B6B; /* Updated expense card color */
-  --balance-card-color: #FFA726; /* Updated balance card color */
-  --accent-color: #1976D2; /* Accent color for buttons and highlights */
+  --primary-color: #264653;
+  --secondary-color: #FFF8E7;
+  --dark-background: #1D1E2C;
+  --light-background: #F7F9FC;
+  --text-color-dark: #2A2A2A;
+  --text-color-light: #EDEDED;
+  --income-card-color: #2A9D8F;
+  --expense-card-color: #E76F51;
+  --balance-card-color: #E9C46A;
+  --accent-color: #0D6EFD; 
 }
 
 * {
