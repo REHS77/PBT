@@ -1,9 +1,12 @@
 .expenses-section {
     padding: 20px;
+    background-color: var(--light-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .add-new {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: white;
     padding: 10px 20px;
     border: none;
@@ -87,46 +90,36 @@
 }
 
 .submit-btn {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: white;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .submit-btn:hover {
-    background-color: #1F8B4C;
+    background-color: #1976D2;
 }
-/* Dark mode styling */
-.dark-mode .expenses-section {
-    background-color: #2D2D2D; /* Darker background for the section */
-    color: #EDEDED; /* Light text color */
+
+.dark-mode .expenses-section,
+.dark-mode .modal-content {
+    background-color: #2D2D2D;
+    color: #EDEDED;
 }
 
 .dark-mode .expenses-table {
-    background-color: #333; /* Darker background for the table */
-    color: #EDEDED; /* Light text color */
-    border-color: #555; /* Darker border color */
+    background-color: #333;
+    color: #EDEDED;
+    border-color: #555;
 }
 
 .dark-mode .expenses-table th,
 .dark-mode .expenses-table td {
-    background-color: #444; /* Dark background for table cells */
+    background-color: #444;
     color: #EDEDED;
 }
 
-/* Modal styling for dark mode */
-.dark-mode .modal-content {
-    background-color: #2D2D2D; /* Darker background for the modal */
-    color: #EDEDED; /* Light text color */
-}
-
-.dark-mode .close-btn {
-    color: #EDEDED;
-}
-
+.dark-mode .close-btn,
 .dark-mode .submit-btn {
-    background-color: #555; /* Darker button background */
     color: #EDEDED;
 }
 
@@ -134,27 +127,18 @@
     background-color: #666;
 }
 
-
-/* Responsive styling for expenses page */
-
 /* Tablet screens */
-@media (max-width: 1024px) {
-    /* Adjust padding for expenses section */
+@media (max-width: 768px) {
     .expenses-section {
         padding: 15px;
     }
-
-    /* Adjust button size */
-    .add-new {
-        font-size: 16px;
+    .add-new, .submit-btn {
+        font-size: 14px;
         padding: 8px 15px;
     }
-
-    /* Adjust table cell padding */
     .expenses-table th, .expenses-table td {
         padding: 10px;
     }
-
     /* Adjust table header font size */
     .expenses-table th {
         font-size: 14px;
@@ -218,13 +202,13 @@
     }
 
     /* Reduce padding in expenses section */
-    .expenses-section {
-        padding: 5px;
+    .expenses-section, .modal-content {
+        padding: 10px;
     }
 
     /* Smaller padding and font size for table cells */
     .expenses-table th, .expenses-table td {
-        padding: 6px;
+        padding: 8px;
         font-size: 12px;
     }
 

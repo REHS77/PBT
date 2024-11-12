@@ -1,13 +1,14 @@
 :root {
   --primary-color: #264653; /* Sidebar background color */
-  --secondary-color: #FFF8E7; /* Category card background */
+  --secondary-color: #F1F5F9; /* Updated lighter background for modern look */
   --dark-background: #1D1E2C; /* Dark mode background */
-  --light-background: #F7F9FC; /* Light mode background */
-  --text-color-dark: #2A2A2A; /* Text color for light mode */
+  --light-background: #FFFFFF; /* Light mode background */
+  --text-color-dark: #333333; /* Slightly darker text color for readability */
   --text-color-light: #EDEDED; /* Text color for dark mode */
-  --income-card-color: #2A9D8F; /* Income card color */
-  --expense-card-color: #E76F51; /* Expense card color */
-  --balance-card-color: #E9C46A; /* Balance card color */
+  --income-card-color: #4CAF50; /* Refreshed income card color */
+  --expense-card-color: #FF6B6B; /* Updated expense card color */
+  --balance-card-color: #FFA726; /* Updated balance card color */
+  --accent-color: #1976D2; /* Accent color for buttons and highlights */
 }
 
 * {
@@ -209,8 +210,8 @@ body {
 }
 
 .add-new {
-  background-color: #D9D9D9;
-  color: var(--primary-color);
+  background-color: var(--accent-color);
+  color: white;
   padding: 15px;
   border-radius: 8px;
   text-align: center;
@@ -218,11 +219,11 @@ body {
   font-weight: 600;
   cursor: pointer; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: none; /* Remove default border for button */
+  border: none;
 }
 
 .add-new:hover {
-  background-color: #c0c0c0;
+  background-color: #1976D2;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -317,13 +318,12 @@ body {
   text-align: center;
 }
 
-
 .modal-button:hover {
   background-color: #1F8B4C;
 }
 
 .delete-button {
-  background-color: #E76F51; /* Different color for delete button */
+  background-color: #E76F51;
 }
 
 .delete-button:hover {
@@ -346,10 +346,6 @@ body {
   color: #555;
 }
 
-
-
-
-/* Transaction Modal Styling */
 #transactionModal {
   display: none;
   position: fixed;
@@ -405,7 +401,7 @@ body.dark-mode {
 }
 
 .card.dark-mode {
-  background-color: #333; /* General dark card background */
+  background-color: #333;
   color: var(--text-color-light);
   border: none;
 }
@@ -435,155 +431,121 @@ body.dark-mode {
   color: var(--text-color-light);
 }
 
-@media (max-width: 768px) {
-  .sidebar {
-    width: 60px;
-  }
-  .menu-item {
-    font-size: 12px;
-  }
-}
-
-
 /* Responsive styling for different screen sizes */
-
-/* Tablet screens */
 @media (max-width: 1024px) {
-  /* Stack sidebar and main content */
-  .dashboard-container {
-      flex-direction: column;
-  }
+    .dashboard-container {
+        flex-direction: column;
+    }
 
-  .sidebar {
-      width: 100%;
-      padding: 10px;
-      text-align: center;
-  }
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
 
-  .menu-item {
-      padding: 5px 0;
-      font-size: 16px;
-  }
+    .menu-item {
+        padding: 5px 0;
+        font-size: 16px;
+    }
 
-  /* Adjust main content padding */
-  .main-content {
-      padding: 20px;
-  }
+    .main-content {
+        padding: 20px;
+    }
 
-  /* Make summary cards stack vertically */
-  .summary-cards {
-      flex-direction: column;
-      gap: 10px;
-  }
+    .summary-cards {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-  /* Adjust expense categories layout */
-  .expense-categories {
-      grid-template-columns: repeat(2, 1fr);
-  }
+    .expense-categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  /* Adjust padding and font size for tables */
-  .expenses-table th, .expenses-table td, .bills-table th, .bills-table td {
-      padding: 10px;
-      font-size: 14px;
-  }
+    .expenses-table th, .expenses-table td, .bills-table th, .bills-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
 }
 
-/* Mobile screens */
 @media (max-width: 768px) {
-  /* Sidebar adjustments */
-  .sidebar {
-      width: 100%;
-      padding: 10px;
-      text-align: center;
-  }
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
 
-  .menu-item {
-      font-size: 14px;
-      padding: 8px 0;
-  }
+    .menu-item {
+        font-size: 14px;
+        padding: 8px 0;
+    }
 
-  /* Adjust main content padding */
-  .main-content {
-      padding: 15px;
-  }
+    .main-content {
+        padding: 15px;
+    }
 
-  /* Stack summary cards vertically */
-  .summary-cards {
-      flex-direction: column;
-      gap: 10px;
-  }
+    .summary-cards {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-  /* Single column layout for expense categories */
-  .expense-categories {
-      grid-template-columns: 1fr;
-  }
+    .expense-categories {
+        grid-template-columns: 1fr;
+    }
 
-  /* Overflow for tables or wide sections */
-  .transaction-section, .recent-transactions, .expenses-section {
-      overflow-x: auto;
-  }
+    .transaction-section, .recent-transactions, .expenses-section {
+        overflow-x: auto;
+    }
 
-  /* Smaller padding and font size for table cells */
-  .expenses-table th, .expenses-table td, .bills-table th, .bills-table td {
-      padding: 8px;
-      font-size: 14px;
-  }
+    .expenses-table th, .expenses-table td, .bills-table th, .bills-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
 
-  /* Adjust modal to fit mobile screen */
-  .modal-content {
-      width: 90%;
-      padding: 15px;
-  }
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
 
-  /* Adjust button size */
-  .add-new, .submit-btn {
-      font-size: 14px;
-      padding: 8px 15px;
-  }
+    .add-new, .submit-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
 }
 
-/* Small mobile screens */
 @media (max-width: 576px) {
-  .menu-item {
-      font-size: 12px;
-  }
+    .menu-item {
+        font-size: 12px;
+    }
 
-  /* Reduce padding in main content */
-  .main-content {
-      padding: 10px;
-  }
+    .main-content {
+        padding: 10px;
+    }
 
-  /* Smaller padding for summary cards */
-  .card {
-      font-size: 16px;
-      padding: 10px;
-  }
+    .card {
+        font-size: 16px;
+        padding: 10px;
+    }
 
-  /* Full-width category cards */
-  .expense-categories {
-      grid-template-columns: 1fr;
-  }
-  
-  /* Smaller padding and font size for table cells */
-  .expenses-table th, .expenses-table td, .bills-table th, .bills-table td {
-      padding: 6px;
-      font-size: 12px;
-  }
+    .expense-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .expenses-table th, .expenses-table td, .bills-table th, .bills-table td {
+        padding: 6px;
+        font-size: 12px;
+    }
 
-  /* Adjust header font size */
-  .header h1 {
-      font-size: 20px;
-  }
+    .header h1 {
+        font-size: 20px;
+    }
 
-  /* Adjust modal width and padding */
-  .modal-content {
-      width: 95%;
-      padding: 10px;
-  }
+    .modal-content {
+        width: 95%;
+        padding: 10px;
+    }
 
-  /* Adjust button sizes */
-  .add-new, .submit-btn {
-      font-size: 12px;
-      padding: 5px 10px;
-  }
+    .add-new, .submit-btn {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
 }

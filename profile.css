@@ -11,7 +11,7 @@
     margin: 10px 0;
 }
 
-.upcoming-bills {
+.bills-section {
     padding: 20px;
     background-color: var(--light-background);
     border-radius: 8px;
@@ -19,7 +19,7 @@
 }
 
 .add-new {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: white;
     padding: 10px 20px;
     border: none;
@@ -64,11 +64,11 @@
 }
 
 .status-pending {
-    background-color: #E9C46A; /* Warm yellow */
+    background-color: #E9C46A;
 }
 
 .status-completed {
-    background-color: #2A9D8F; /* Teal green */
+    background-color: #2A9D8F;
 }
 
 /* Modal Styling */
@@ -90,6 +90,7 @@
     padding: 20px;
     border-radius: 8px;
     width: 400px;
+    max-width: 90%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -101,7 +102,7 @@
 }
 
 .submit-btn {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: white;
     padding: 10px;
     border: none;
@@ -109,10 +110,15 @@
     cursor: pointer;
 }
 
+.submit-btn:hover {
+    background-color: #1976D2;
+}
+
 /* Dark Mode Styles */
-.dark-mode .personal-info {
-    background-color: #333; /* Dark background for personal info in dark mode */
-    color: #EDEDED; /* Light text color for readability */
+.dark-mode .personal-info,
+.dark-mode .bills-section {
+    background-color: #333;
+    color: #EDEDED;
 }
 
 .dark-mode .info-container p {
@@ -134,31 +140,21 @@
     color: #EDEDED;
 }
 
-/* Responsive styling for personal info and bills sections */
-
+.dark-mode .close-btn,
+.dark-mode .submit-btn {
+    color: #EDEDED;
+}
 /* Tablet screens */
-@media (max-width: 1024px) {
-    /* Adjust padding for the main sections */
+@media (max-width: 768px) {
     .personal-info, .bills-section {
-      padding: 15px;
+        padding: 15px;
     }
-    
-    .info-container p {
-      font-size: 16px;
+    .info-container p, .bills-table th, .bills-table td {
+        font-size: 14px;
     }
-  
-    /* Adjust table structure for smaller screens */
-    .bills-table th, .bills-table td {
-      padding: 10px;
-    }
-  
-    .bills-table th {
-      font-size: 14px;
-    }
-  
-    .add-new {
-      font-size: 16px;
-      padding: 8px 15px;
+    .add-new, .submit-btn {
+        font-size: 14px;
+        padding: 8px 15px;
     }
   }
   
